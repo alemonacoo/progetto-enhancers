@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-express-tests",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alemonacoo/nodejs-express-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alemonacoo/nodejs-express-tests/issues"
+  },
+  "homepage": "https://github.com/alemonacoo/nodejs-express-tests#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-list-endpoints": "^6.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
