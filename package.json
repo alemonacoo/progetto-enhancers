@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node -r dotenv/config src/server.js",
-    "watch": "nodemon -r dotenv/config src/server.js"
+    "dev": "nodemon -r dotenv/config src/server.js"
   },
   "repository": {
     "type": "git",
