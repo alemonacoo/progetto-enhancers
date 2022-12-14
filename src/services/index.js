@@ -10,6 +10,7 @@ myRouter.get("/", async (req, res, next) => {
     const businesses = await getBusinneses();
     const weather = await getWeather();
 
+    //crea array composito di città, meteo e businesses
     const compositeArray = [];
     cities.forEach((city, index) => {
       compositeArray.push({
