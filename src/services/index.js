@@ -1,5 +1,5 @@
 import express from "express";
-import cities from "../data/cities.json" assert { type: "json" };
+import { cities } from "../data/cities.js";
 import { getWeather } from "./WeatherApi.js";
 import { getBusinneses } from "./BusinessesApi.js";
 

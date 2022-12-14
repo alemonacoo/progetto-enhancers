@@ -1,4 +1,4 @@
-import cities from "../data/cities.json" assert { type: "json" };
+import { cities } from "../data/cities.js";
 import fetch from "node-fetch";
 
 // Funzione per mappare ogni elemento dell'array cities in un array di latitudini e longitudini
