@@ -1,29 +1,28 @@
 import express from "express";
-import { getBusinesses, getWeather } from "./utilities.js";
+import cities from "../data/cities.json" assert { type: "json" };
+import { getWeather } from "./WeatherApi.js";
+import { getBusinneses } from "./BusinessesApi.js";
 
 const myRouter = express.Router();
 
 myRouter.get("/", async (req, res, next) => {
   try {
-    //chiamare funzioni delle utilities
-    console.log("tutto funziona correttamente");
+    const businesses = await getBusinneses();
     const weather = await getWeather();
-    const businesses = await getBusinesses();
-    res.send({ weather: weather, businesses: businesses });
+
+    const compositeArray = [];
+    cities.forEach((city, index) => {
+      compositeArray.push({
+        city: city,
+        weather: weather[index],
+        businesses: businesses[index].businesses,
+      });
+    });
+
+    res.status(200).send(compositeArray);
   } catch (error) {
     res.send({ message: error.message });
   }
 });
-
-// SHOW di un id
-// myRouter.get("/:id", async (req, res, next) => {
-//   try {
-//     //chiamare funzioni delle utilities
-//     const id = req.params.id;
-//     res.send("tutto funziona correttamente");
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
 
 export default myRouter;
