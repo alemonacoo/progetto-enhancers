@@ -1,6 +1,5 @@
 import { latLonArray } from "./CitiesLatLon.js";
 import fetch from "node-fetch";
-import res from "express/lib/response.js";
 
 export const getBusinneses = async () => {
   let businesses = Promise.all(
